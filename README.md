@@ -1,5 +1,7 @@
 # Student Management System CPP
 
+![ctf.jpeg](Student%20Management%20System%20CPP%2016bb04b52d0947769c43cb66249e8b44/ctf.jpeg)
+
 ## **Overview**
 
 This project is a program for managing student records. It allows the user to create, view, search, update, and delete student records. The program uses an array of structures to store the student records.
@@ -42,6 +44,17 @@ The following bugs are present in the program:
 4. The student records are not displayed in proper order when using the display function.
 5. The program terminates when the display function finishes displaying the records, instead of returning to the main menu.
 6. There is a bug in the delete function that is causing student records to not be deleted properly.
+
+## Rules :
+
+1. Each team can participate in only one programming language.
+2. To participate, you must fork this repository, make the necessary changes to the file(s), and then create a pull request (PR) on the main branch with the correct code.
+3. Teams will be ranked based on the time they take to create the PR and the accuracy of their code.
+4. For time-based ranking, only the time taken for the last commit will be considered. Multiple commits can be made in a single PR.
+5. Any commit made after 12 pm will not be considered for any team.
+6. To be ranked based on code, your submitted code must solve all the bugs listed in the project description.
+7. You are allowed to explain your changes using comments.
+8. We hope these rules are clear and easy to follow. Good luck with the contest!
 
 ## **Task**
 
