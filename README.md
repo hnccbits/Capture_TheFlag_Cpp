@@ -1,6 +1,6 @@
 # Student Management System CPP
 
-![ctf.jpeg](Student%20Management%20System%20CPP%2016bb04b52d0947769c43cb66249e8b44/ctf.jpeg)
+![ctf.jpeg](Images/ctf.jpeg)
 
 ## **Overview**
 
