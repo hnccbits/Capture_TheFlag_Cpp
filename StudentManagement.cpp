@@ -39,8 +39,23 @@ void build()
         cout << "Name: ";
         cin.ignore();
         getline(cin, emp[i].name);
+        
+        IDagain:
         cout << "Student ID: ";
         cin >> emp[i].code;
+
+        // correction for the first bug .i.e., FOR DUPLICATE STUDENT IDS:
+        if(i > 0)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                    if(emp[j].code == emp[i].code)
+                    {
+                        cout << "This ID is alread taken. Please choose any other ID."<<endl;
+                        goto IDagain;
+                    }
+            }
+        }       
 
         cout << "Branch: ";
         cin.ignore();
@@ -92,7 +107,7 @@ void insert()
 
 void deleteIndex(int i)
 {
-    for (int j = i; j < num - 1; j++)
+    for (int j = i; j < num; j++)
     {
         emp[j].name = emp[j + 1].name;
         emp[j].code = emp[j + 1].code;
@@ -106,7 +121,7 @@ void deleteIndex(int i)
 void deleteRecord()
 {
     cout << "Enter the Student ID "
-         << "to Delete Record";
+         << "to Delete Record : ";
 
     int code;
     int flag = 0;
@@ -121,6 +136,7 @@ void deleteRecord()
             break;
         }
     }
+
     if (flag == 0)
     {
         cout << "Invalid ID\n";
@@ -131,7 +147,7 @@ void deleteRecord()
 void searchRecord()
 {
     cout << "Enter the Student"
-         << " ID to Search Record";
+         << " ID to Search Record : ";
 
     int code;
     cin >> code;
@@ -156,6 +172,8 @@ void searchRecord()
 
             cout << "Age "
                  << emp[i].age << "\n";
+
+            num--;
             break;
         }
     }
@@ -171,16 +189,18 @@ void searchRecord()
 void DisplayRecord()
 {
     cout << "all the Student Record" << endl;
-    cout << "  Name    "
-         << "        Student ID "
-         << "     Branch "
-         << "           Batch "
-         << "    Age " << endl;
+    cout << "  Name"
+         << "\t\t\tStudent ID "
+         << "\t\tBranch "
+         << "\t\tBatch "
+         << "\t\tAge " << endl;
     for (int i = 0; i < num; i++)
     {
 
-        cout << emp[i].name << "\t\t\t" << emp[i].code << "\t\t" << emp[i].branch << "\t\t" << emp[i].exp << "\t\t" << emp[i].age << "\n";
+        cout << emp[i].name << "\t\t\t" << emp[i].code << "\t\t\t" << emp[i].branch << "\t\t" << emp[i].exp << "\t\t" << emp[i].age << "\n";
     }
+
+
 
     showMenu();
 }
@@ -230,6 +250,8 @@ void Updaterecord()
             cin >> emp[i].age;
 
             cout << "Information Have been Updated Successfully..........\n";
+
+            num--;
             break;
         }
         if (flag == 0)
@@ -306,5 +328,17 @@ int main()
 {
 
     showMenu();
+
+    fstream file;
+    file.open("student_records", ios::out);
+    
+    file<<"Name"<<"\t\t\t"<<"Student ID"<<"\t\t\t"<<"Branch"<<"\t\t\t"<<"Batch"<<"\t\t\t"<<"Age"<<endl;
+    for (int k = 0; k < num; k++)
+    {
+
+        file<<emp[k].name<<"\t\t\t"<<emp[k].code<<"\t\t\t"<<emp[k].branch<<"\t\t\t"<<emp[k].exp<<"\t\t\t"<<emp[k].age<<endl;
+    }
+    
     return 0;
 }
+
