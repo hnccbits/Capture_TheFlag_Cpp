@@ -200,7 +200,7 @@ void DisplayRecord()
         cout << emp[i].name << "\t\t\t" << emp[i].code << "\t\t\t" << emp[i].branch << "\t\t" << emp[i].exp << "\t\t" << emp[i].age << "\n";
     }
 
-    
+
 
     showMenu();
 }
@@ -328,5 +328,17 @@ int main()
 {
 
     showMenu();
+
+    fstream file;
+    file.open("student_records", ios::out);
+    
+    file<<"Name"<<"\t\t\t"<<"Student ID"<<"\t\t\t"<<"Branch"<<"\t\t\t"<<"Batch"<<"\t\t\t"<<"Age"<<endl;
+    for (int k = 0; k < num; k++)
+    {
+
+        file<<emp[k].name<<"\t\t\t"<<emp[k].code<<"\t\t\t"<<emp[k].branch<<"\t\t\t"<<emp[k].exp<<"\t\t\t"<<emp[k].age<<endl;
+    }
+    
     return 0;
 }
+
