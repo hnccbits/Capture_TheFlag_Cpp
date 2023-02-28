@@ -13,7 +13,7 @@ This project is a program for managing student records. It allows the user to cr
 3. Teams will be ranked based on the time they take to create the PR and the accuracy of their code.
 4. For time-based ranking, only the time taken for the last commit will be considered. Multiple commits can be made in a single PR.
 5. Any commit made after 12 pm will not be considered for any team.
-6. To be ranked based on code, your submitted code must solve all the bugs listed in the project description.
+6. To be ranked based on code, your submitted code must add all the features listed in the project description.
 7. You are allowed to explain your changes using comments.
 8. We hope these rules are clear and easy to follow. Good luck with the contest!
 
@@ -45,18 +45,15 @@ The program allows an admin to manage a table of student data, with a maximum of
     - Run the command g++ **`StudentManagement.cpp`**.
 4. To run the program in an IDE, open project in IDE and run the **`StudentManagement.cpp`** file.
 
-## **Bugs**
+## **Features to be added**
 
-The following bugs are present in the program:
+You need to add the following features in the program:
 
-1. The program allows for duplicate student IDs to be stored.
-2. The search function has a bug that incorrectly identifies and displays the student record that matches the entered student ID.
-3. The update function is not correctly updating the student record with new details entered by the admin.
-4. The student records are not displayed in proper order when using the display function.
-5. The program terminates when the display function finishes displaying the records, instead of returning to the main menu.
-6. There is a bug in the delete function that is causing student records to not be deleted properly.
+1. DisplayRecord() function should dispaly all the names sorted according to the student ID, i.e the student with smaller student ID should be shown first.
+
+2. Add a menu option named "Save records" which saves the current data in a text file called "Save.txt", if there is no data currently then it should print so.
 
 
 ## **Task**
 
-The task is to resolve all the identified bugs within the student management system, and to create a pull request (PR) with the proposed fixes.
+The task is to add all the features within the student management system, and to create a pull request (PR) with the proposed fixes.
